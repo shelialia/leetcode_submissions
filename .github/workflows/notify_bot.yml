@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Dispatch to bot repo
         env:
-          BOT_REPO_OWNER: chuajunyu
+          BOT_REPO_OWNER: jy-forge
           BOT_REPO_NAME: streaky
           BOT_DISPATCH_TOKEN: ${{ secrets.BOT_DISPATCH_TOKEN }}
         run: |
