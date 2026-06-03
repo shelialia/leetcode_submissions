@@ -1,0 +1,31 @@
+name: Notify Streaky Bot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.py"
+      - "**/*.js"
+      - "**/*.ts"
+      - "**/*.java"
+      - "**/*.cpp"
+      - "**/*.c"
+      - "**/*.go"
+      - "**/*.rs"
+      - "**/*.cs"
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch to bot repo
+        env:
+          BOT_REPO_OWNER: chuajunyu
+          BOT_REPO_NAME: streaky
+          BOT_DISPATCH_TOKEN: ${{ secrets.BOT_DISPATCH_TOKEN }}
+        run: |
+          curl -fsS -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $BOT_DISPATCH_TOKEN" \
+            "https://api.github.com/repos/$BOT_REPO_OWNER/$BOT_REPO_NAME/dispatches" \
+            -d '{"event_type":"poll_submissions"}'
