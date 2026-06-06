@@ -1,5 +1,8 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Basically the inner loop of 3Sum solution
+        """
         res = []
         left, right = 0, len(nums) - 1
         while left < right:
