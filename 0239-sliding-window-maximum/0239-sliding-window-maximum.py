@@ -17,6 +17,9 @@ class Solution:
         2. Only append result when (right + 1) >= k because it's when the window starts to move
         3. Only if (right + 1) >= k then we move our left pointer too (window moves)
         4. At every iteration, we move our right pointer. 
+
+        Time Complexity: O(n); The pop and append operations are amortized O(1) on average
+        Space Complexity: O(n); Worst case where nums is strictly decreasing then every element is added to the queue AND the window size k == size of array nums
         """
         res = []
         q = deque() # stores indexes
