@@ -10,7 +10,7 @@ class Solution:
                 char_set.remove(s[left])
                 left += 1
             char_set.add(s[right])
-            print("char_set", char_set)
+            # print("char_set", char_set)
             
             longest_len = max(longest_len, right - left + 1)
 
