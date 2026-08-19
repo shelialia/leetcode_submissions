@@ -2,7 +2,8 @@ class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         # Counter array with length 26 storing the counts of each english char
         # Sliding window problem
-        # While k < len(window) - max(highest occurrence in window)
+        # While k < len(window) - max(highest occurrence in window) 
+        # chars that need replacement == len(window) - max(highest occurrence in window) 
         # shift left pointer. otherwise, can continue expanding window to right
         counter = [0] * 26
         max_len = 0
