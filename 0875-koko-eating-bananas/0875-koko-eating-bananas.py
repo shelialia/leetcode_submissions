@@ -9,10 +9,11 @@ class Solution:
         def isPossible(rate: int) -> bool:
             time_taken = 0
             for pile in piles:
-                time_taken += math.ceil(pile / rate)
+                time_taken += ceil(pile / rate)
             return time_taken <= h
         
-        low, high = 1, total
+        # max speed is max(piles) because eating every pile would take 1hour
+        low, high = 1, max(piles)
         while low < high:
             print(low, high)
             mid = (low + high) // 2
