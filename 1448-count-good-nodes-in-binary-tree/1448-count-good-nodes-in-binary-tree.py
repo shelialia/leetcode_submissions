@@ -11,16 +11,12 @@ class Solution:
             nonlocal count
             if not node:
                 return
-            if node.val < biggest_val:
-                if node.left:
-                    dfs(node.left, biggest_val)
-                if node.right:
-                    dfs(node.right, biggest_val)
-            else:
+            if node.val >= biggest_val:
                 count += 1
-                if node.left: 
-                    dfs(node.left, node.val)
-                if node.right:
-                    dfs(node.right, node.val)
+                biggest_val = node.val
+
+            dfs(node.left, biggest_val)
+            dfs(node.right, biggest_val)
+            
         dfs(root, root.val)
         return count
