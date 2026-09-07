@@ -2,11 +2,13 @@ from collections import defaultdict
 class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         """
-        Slice the domain into subdomains
-        1. Whole domain
-        2. Second domain + third domain
-        3. Third domain
         Store a hashmap of domain -> count
+        Loop thru cpdomains:
+        1. Split into count, domain
+        2. Split domain into parts
+        3. Loop through such that we take 1+2+3 -> 2+3 -> 3 based on length of parts
+        - Join the parts using "."
+        - Increment count on the domain
         """
         domain_to_count = defaultdict(int)
         for cpdomain in cpdomains:
