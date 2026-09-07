@@ -14,11 +14,14 @@ class Solution:
 
             domains = []
             domains.append(domain)
-            split_domains = cpdomain.split(".")
+
+            # If in format rep d1.d2.d3, extract d2.d3
+            split_domains = domain.split(".")
             if len(split_domains) > 2:
                 second_third_domain = split_domains[1] + "." + split_domains[2]
                 domains.append(second_third_domain)
             
+            # For both formats rep d1.d2 and rep d1.d2.d3, extract d2 and d3 respectively
             domains.append(split_domains[-1])
             
             for d in domains:
