@@ -29,4 +29,8 @@ dp2[i] = max amount you can rob from 1..i (exclude first index)
 
 dp1[i] = max(dp1[i - 2] + nums[i], dp1[i - 1])
 dp2[i] = max(dp2[i - 2] + nums[i], dp2[i - 1])
+use first, second. Since we do not need any other values besides the last 2 consecutive values, we can save space - do not need to store o(n) dp array
+
+Use helper function to simulate house robber, but we include only the valid array
+2 options - first exclude final index, second exclude first index
 """
