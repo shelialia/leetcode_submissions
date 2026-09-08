@@ -16,4 +16,6 @@ dp[0], dp[1] = 0, 0 (can start from either index 0 or index 1)
 dp[i] = to get to index i, lowest cost to reach i - 1 + cost[i - 1] 
 OR lowest cost to reach i - 2 + cost[i - 2]
 
+Time complexity: O(n) where n is len(cost)
+Space complexity: O(n) where n is len(cost)
 """
