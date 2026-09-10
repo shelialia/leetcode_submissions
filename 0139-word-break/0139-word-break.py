@@ -8,6 +8,7 @@ class Solution:
                 word_len = len(word)
                 if (i - word_len) >= 0 and s[i - word_len: i] == word and dp[i - word_len]:
                     dp[i] = True
+                    break # can safely break because we determined this index as possible to be segmented already
         return dp[-1]
 
 """
